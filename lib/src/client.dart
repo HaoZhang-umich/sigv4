@@ -232,6 +232,7 @@ class Sigv4Client implements BaseSigv4Client {
         Sigv4.buildCredentialScope(dateTime, region, serviceName);
     final stringToSign = Sigv4.buildStringToSign(
         dateTime, credentialScope, hashedCanonicalRequest);
+    print(stringToSign);
     final signingKey =
         Sigv4.calculateSigningKey(accessKey, dateTime, region, serviceName);
     final signature = Sigv4.calculateSignature(signingKey, stringToSign);
