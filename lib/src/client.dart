@@ -227,6 +227,7 @@ class Sigv4Client implements BaseSigv4Client {
   }) {
     final canonicalRequest =
         Sigv4.buildCanonicalRequest(method, path, query, headers, body);
+    print(canonicalRequest);
     final hashedCanonicalRequest = Sigv4.hashPayload(canonicalRequest);
     final credentialScope =
         Sigv4.buildCredentialScope(dateTime, region, serviceName);
